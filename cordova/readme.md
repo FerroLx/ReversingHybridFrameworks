@@ -7,13 +7,13 @@ Cordova is a framework that uses a custom webview with custom interfaces and web
 Example plugin `cordova-plugin-contacts`.
 
 The javascript that calls the `exec` method that in itself will call the java Module execute function.
-![Example plugin - JavaScript](ReversingHybridFrameworks/cordova/cordova_images/plugin_javascript.png "contact.js")
+![Example plugin - JavaScript](cordova_images/plugin_javascript.png "contact.js")
 
 The Contact Plugin main Java class.
-![Example plugin - Java](ReversingHybridFrameworks/cordova/cordova_images/plugin_java.png "ContactManager.java")
+![Example plugin - Java](cordova_images/plugin_java.png "ContactManager.java")
 
 The Contact Plugin main execute method.
-![Example plugin - Method that is called from the javaScript](ReversingHybridFrameworks/cordova/cordova_images/plugin_method.png "ContactManager.execute")
+![Example plugin - Method that is called from the javaScript](cordova_images/plugin_method.png "ContactManager.execute")
 
 This is **NOT** a tutorial or explanation on how to reverse cordova applications and takes in consideration that you already know who to do it.
 
@@ -73,7 +73,7 @@ For the loaded Modules is important to get info about the way that is used in th
 
 The `cordova_plugins.js` has info about all the plugins that will be available in the javascript side and the clobbers (names), that will be used. 
 
-![Example cordova_plugins.js](ReversingHybridFrameworks/cordova/cordova_images/cordova_plugins.png "cordova_plugins.js")
+![Example cordova_plugins.js](cordova_images/cordova_plugins.png "cordova_plugins.js")
 
 In the function presented bellow the `cordova_plugins.js` is read and parsed in order to get the necessary info. This method is called from the overload of the `ConfigXmlParser` because it requires the launchUrl directory.
 
