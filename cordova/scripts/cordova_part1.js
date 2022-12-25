@@ -24,7 +24,7 @@ Java.perform(function () {
     var SystemWebViewEngine = Java.use('org.apache.cordova.engine.SystemWebViewEngine')
     SystemWebViewEngine.loadUrl.overload('java.lang.String', 'boolean').implementation = function (var1, var2) {
         console.log('\n################### SystemWebViewEngine Data ###################')
-        console.log('--> WebView.loadUrl -> ', var1, ' --> ', var2)
+        console.log('--> WebView.loadUrl -> ', var1, ' --> ', var2, '\n')
         this.loadUrl(var1, var2)
     }
 

@@ -15,7 +15,7 @@ The Contact Plugin main Java class.
 The Contact Plugin main execute method.
 ![Example plugin - Method that is called from the javaScript](cordova_images/plugin_method.png "ContactManager.execute")
 
-This is **NOT** a tutorial or explanation on how to reverse cordova applications and takes in consideration that you already know how to do it.
+This is **NOT** a tutorial or explanation on how to reverse cordova applications and takes in consideration that you already know who to do it.
 
 Full scripts and tools can be found in my [github]()
 
@@ -156,11 +156,10 @@ pluginManager.startupPlugins.implementation = function() {
 The final script of this part 1 allows us to log all the data that is being passed from the javaScript side to the Java side and what it returns.
 
 ```js
+var logFirstTime = true
 var SystemExposedJsApi = Java.use('org.apache.cordova.engine.SystemExposedJsApi')
-SystemExposedJsApi.exec.overload('int', 'java.lang.String', 'java.lang.String', 'java.lang.String', 'java.lang.String').implementation = function(var1, var2, var3, var4, var5) {
-    console.log(var1, var2, var3, var4, var5)
+SystemExposedJsApi.exec.overload('int', 'java.lang.String', 'java.lang.String', 'java.lang.String', 'java.lang.String').implementation = function (var1, var2, var3, var4, var5) {
     var ret = this.exec(var1, var2, var3, var4, var5)
-    console.log(ret)
     if (ret == null) {
         ret_str = ret
     } else {
@@ -171,16 +170,34 @@ SystemExposedJsApi.exec.overload('int', 'java.lang.String', 'java.lang.String', 
         }
     }
     const currentDate = new Date();
-
     var str = currentDate + ' : ' + '\t\t-> ' + var2 + '.' + var3 + '\n\t\t\t\t\t\t\t\t\t\t\t\t- ARGS_ARRAY = ' + var5 + '\n\t\t\t\t\t\t\t\t\t\t\t\t- RETURN = ' + ret_str
-    saveToLog(str)
+    if (logFirstTime) {
+        console.log('\n######################## LOGGER ########################\n')
+        logFirstTime = false
+    }
     console.log(str)
     return ret;
 }
 ```
 
+### Interpreting the outputs
+
+The Scripts outputs on the console.log and gets the following outputs:
+- ConfigXmlParser Data
+![Output ConfigXmlParser](cordova_images/configxmlparser.png "Output Script ConfigXmlParser")
+- JavaScript Modules Data
+![Output JavaScript Modules](cordova_images/javascript_side.png "Output Script JavaScript Modules")
+- Java Modules Data
+![Output Java Modules](cordova_images/java_side.png "Output Script Java Modules") 
+- SystemWebViewEngine Data
+![Output SystemWebViewEngine](cordova_images/systemwebviewengine.png "Output Script SystemWebViewEngine") 
+- Logger
+![Output Logger](cordova_images/logger.png "Output Script Logger") 
+
+
+
 ### Conclusion
 
 In this first part was possible to create a script that gets all the plugins info and logs it's calls data.
 
-Full script can be found [**here**]().
+Full script can be found [**here**](https://github.com/FerroLx/ReversingHybridFrameworks/blob/main/cordova/scripts/cordova_part1.js).
