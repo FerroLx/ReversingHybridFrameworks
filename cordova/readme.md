@@ -17,8 +17,6 @@ The Contact Plugin main execute method.
 
 This is **NOT** a tutorial or explanation on how to reverse cordova applications and takes in consideration that you already know who to do it.
 
-Full scripts and tools can be found in my [github]()
-
 
 ### What's being loaded to the webview
 
