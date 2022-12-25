@@ -15,7 +15,7 @@ The Contact Plugin main Java class.
 The Contact Plugin main execute method.
 ![Example plugin - Method that is called from the javaScript](cordova_images/plugin_method.png "ContactManager.execute")
 
-This is **NOT** a tutorial or explanation on how to reverse cordova applications and takes in consideration that you already know who to do it.
+This is **NOT** a tutorial or explanation on how to reverse cordova applications and takes in consideration that you already know how to do it.
 
 Full scripts and tools can be found in my [github]()
 
